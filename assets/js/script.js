@@ -1,27 +1,64 @@
 // TODO: Declare any global variables we need
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // This is just a sanity check to make sure your JavaScript script is getting loaded
-    // You can remove it once you see it in your browser console in the developer tools
-    console.log('Hi')
+    let heads=0;
+    let tails=0;
+    let total=0;
+    const numHead = document.getElementById('heads')
+    const perHead = document.getElementById('heads-percent')
+    const numTail = document.getElementById('tails')
+    const perTail = document.getElementById('tails-percent')
+    const image = document.querySelector('img')
+    const text = document.querySelector('h3')
+        
+    // TODO: Flip Button
+    const flip = document.getElementById('flip')
+    flip.addEventListener('click', ()=>{
+        let desicion = Math.round(Math.random())
+      console.log(desicion)
 
-    // TODO: Add event listener and handler for flip and clear buttons
+      if (desicion===1){
+          heads++
+          total++
+          numHead.textContent = heads
+          let percent = (heads/total)*100
+          perHead.textContent = `${Math.round(percent)}%`
+          image.src = '/assets/images/penny-heads.jpg'
+          text.textContent = 'You Flipped Heads!'
+          console.log(`Heads count: ${heads}`)
+          console.log(`Tails count: ${tails}`)          
+          console.log(`Total count: ${total}`)
+      }
+      else {
+          tails++
+          total++
+          numTail.textContent = tails
+          let percent = (tails/total)*100
+          perTail.textContent = `${Math.round(percent)}%`
+          image.src = '/assets/images/penny-tails.jpg'
+          text.textContent = 'You Flipped Tails!'          
+          console.log(`Heads count: ${heads}`)
+          console.log(`Tails count: ${tails}`)          
+          console.log(`Total count: ${total}`)
+      }
 
-    // Flip Button Click Handler
-        // TODO: Determine flip outcome
-        // TODO: Update image and status message in the DOM
-
-        // Update the scorboard
-        // TODO: Calculate the total number of rolls/flips
-        // Make variables to track the percentages of heads and tails
-        // TODO: Use the calculated total to calculate the percentages
-        // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
-        // TODO: Update the display of each table cell
-
+    })
 
     // Clear Button Click Handler
+    const clear = document.getElementById('clear')
+    clear.addEventListener('click', ()=>{
+        heads = 0
+        tails = 0
+        total=0
+        text.textContent = 'Lets get Rolling!'
+        numHead.textContent = '0%'
+        numTail.textContent = '0%'
+        perHead.textContent = '0%'
+        perTail.textContent = '0%'
+        image.src='/assets/images/penny-heads.jpg'
+
+    })
+
         // TODO: Reset global variables to 0
         // TODO: Update the scoreboard (same logic as in flip button click handler)
 
-})
