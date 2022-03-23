@@ -23,7 +23,7 @@
           numHead.textContent = heads
           let percent = (heads/total)*100
           perHead.textContent = `${Math.round(percent)}%`
-          image.src = './assets/images/penny-heads.jpg'
+          image.src = 'assets/images/penny-heads.jpg'
           text.textContent = 'You Flipped Heads!'
           console.log(`Heads count: ${heads}`)
           console.log(`Tails count: ${tails}`)          
@@ -35,7 +35,7 @@
           numTail.textContent = tails
           let percent = (tails/total)*100
           perTail.textContent = `${Math.round(percent)}%`
-          image.src = './assets/images/penny-tails.jpg'
+          image.src = 'assets/images/penny-tails.jpg'
           text.textContent = 'You Flipped Tails!'          
           console.log(`Heads count: ${heads}`)
           console.log(`Tails count: ${tails}`)          
@@ -55,7 +55,7 @@
         numTail.textContent = '0%'
         perHead.textContent = '0%'
         perTail.textContent = '0%'
-        image.src='./assets/images/penny-heads.jpg'
+        image.src='assets/images/penny-heads.jpg'
 
     })
 
